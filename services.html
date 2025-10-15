@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Our Services - HealthCare</title>
+</head>
+<body>
+    <header>
+        <nav class="section__container nav__container">
+            <div class="nav__logo">Health<span>Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="index.html#about">About Us</a></li>
+                <li class="link"><a href="services.html">Services</a></li>
+                <li class="link"><a href="index.html#pages">Pages</a></li>
+                <li class="link"><a href="index.html#blog">Blog</a></li>
+            </ul>
+            <button class="btn" id="loginBtn">Login</button>
+        </nav>
+    </header>
+
+    <main class="services-page-main">
+        <div class="section__container">
+            <p class="section__description">
+                We offer a wide range of specialized healthcare services. Our expert team uses state-of-the-art technology to provide you with the best care.
+            </p>
+
+            <div class="detailed-service-grid">
+                <div class="detailed-service-card" data-form-type="lab_test">
+                    <span><i class="ri-microscope-line"></i></span>
+                    <h4>Laboratory Test</h4>
+                    <p>Our advanced laboratory provides a wide range of tests for accurate diagnostics, ensuring swift and reliable results.</p>
+                    <button class="btn book-btn">Book a Test</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="checkup">
+                    <span><i class="ri-heart-pulse-line"></i></span>
+                    <h4>Health Check</h4>
+                    <p>We offer comprehensive health check-up packages tailored to different age groups and lifestyles for early detection and prevention.</p>
+                    <button class="btn book-btn">View Packages</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="consultation">
+                    <span><i class="ri-mental-health-line"></i></span>
+                    <h4>General Dentistry</h4>
+                    <p>Our dental clinic provides complete oral care solutions, from routine check-ups and cleanings to fillings and extractions.</p>
+                    <button class="btn book-btn">Book Appointment</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="consultation">
+                    <span><i class="ri-heart-3-line"></i></span>
+                    <h4>Cardiology</h4>
+                    <p>Our cardiology department specializes in the diagnosis and treatment of heart conditions like hypertension and coronary artery disease.</p>
+                    <button class="btn book-btn">Consult a Cardiologist</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="consultation">
+                    <span><i class="ri-brain-line"></i></span>
+                    <h4>Neurology</h4>
+                    <p>We provide expert care for disorders of the nervous system, including the brain, spinal cord, and nerves.</p>
+                    <button class="btn book-btn">Get Consultation</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="consultation">
+                    <span><i class="ri-body-scan-line"></i></span>
+                    <h4>Dermatology</h4>
+                    <p>Our dermatology services cover all aspects of skin care, from treating common conditions like acne to advanced cosmetic procedures.</p>
+                    <button class="btn book-btn">See a Specialist</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="default">
+                    <span><i class="ri-empathize-line"></i></span>
+                    <h4>Pediatrics</h4>
+                    <p>We offer compassionate and comprehensive medical care for infants, children, and adolescents.</p>
+                    <button class="btn book-btn">Find a Doctor</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="default">
+                    <span><i class="ri-bone-line"></i></span>
+                    <h4>Orthopedics</h4>
+                    <p>Our orthopedic specialists treat injuries and diseases of the musculoskeletal system, including bones, joints, and ligaments.</p>
+                    <button class="btn book-btn">Book an Orthopedist</button>
+                </div>
+                <div class="detailed-service-card" data-form-type="default">
+                    <span><i class="ri-first-aid-kit-line"></i></span>
+                    <h4>24/7 Emergency Care</h4>
+                    <p>Our emergency department is open 24/7 to provide immediate medical attention for urgent and life-threatening conditions.</p>
+                    <button class="btn" id="emergency-btn">Call for Help</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBookingBtn">&times;</span>
+            <h2>Book an Appointment</h2>
+            <p>You are booking for: <strong id="bookingServiceTitle">Service Name</strong></p>
+            <form id="bookingForm">
+                <div id="booking-form-fields"></div>
+                <button type="submit" class="btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+    <div id="emergencyModal" class="modal">
+    <div class="modal-content emergency-content">
+        <span class="close" id="closeEmergencyBtn">&times;</span>
+        <div class="emergency-header">
+            <i class="ri-alarm-warning-line"></i>
+            <h2>Emergency Contact</h2>
+        </div>
+        <p>For immediate medical assistance, please call the number below. Our emergency services are available 24/7.</p>
+        <div class="emergency-contact">
+            <a href="tel:+911145678901">(+91) 11-4567-8901</a>
+        </div>
+        <p class="address">123 HealthCare Lane, Connaught Place, New Delhi, Delhi 110001</p>
+    </div>
+</div>
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAuthBtn">&times;</span>
+            <div class="form-toggle">
+                <button id="loginToggle" class="active">Login</button>
+                <button id="registerToggle">Register</button>
+            </div>
+            <form id="loginForm" class="auth-form active">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <form id="registerForm" class="auth-form">
+                <h2>Register</h2>
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="services.js"></script>
+</body>
+</html>

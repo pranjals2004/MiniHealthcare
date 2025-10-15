@@ -1,0 +1,118 @@
+/* Reusing your root variables for perfect theme consistency */
+:root {
+    --error-color: #e74c3c;
+    --error-color-light: #fbe9e7;
+    --success-color: #2ecc71;
+    --success-color-light: #e8f5e9;
+}
+
+body {
+    background-color: #f8f9fa; /* A neutral, light background */
+}
+
+/* ===== NAVIGATION BAR ===== */
+.dashboard__nav {
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user__profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.logout__btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.logout__btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ===== MAIN FORM CONTAINER ===== */
+.dashboard__form__container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    /* Using your existing card shadow style */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.dashboard__form__container p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Using your existing input field style */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-color);
+    background-color: var(--primary-color-light);
+    border-radius: 5px;
+}
+
+/* Custom style for file input to look better */
+.form-group input[type="file"] {
+    padding: 0.75rem;
+    border: 2px dashed var(--primary-color-dark);
+    cursor: pointer;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+/* ===== STATUS MESSAGES ===== */
+#status-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+#status-message.success {
+    display: block;
+    background-color: var(--success-color-light);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+#status-message.error {
+    display: block;
+    background-color: var(--error-color-light);
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}

@@ -1,0 +1,252 @@
+:root {
+  --primary-color: #12ac8e;
+  --primary-color-dark: #0d846c;
+  --primary-color-light: #e9f7f7;
+  --secondary-color: #fb923c;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+/* --- Base Styles --- */
+body.dashboard-page {
+  font-family: sans-serif;
+  color: var(--text-dark);
+  margin: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(18, 172, 142, 0.9),
+      rgba(18, 172, 142, 0.7)
+    ),
+    url("assets/header.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* --- Navigation --- */
+/* (Assuming nav styles are in your main style.css, but adding some for context) */
+.dashboard__nav .nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.user__profile {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.user__profile span {
+  color: var(--secondary-color);
+}
+
+.logout__btn {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+/* --- Main Content Layout --- */
+main .section__container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.dashboard__form__container,
+.reports__container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.dashboard__form__container {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reports__container {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+}
+
+h1, .section__header {
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* --- Form Styles --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* --- Reports List --- */
+#reports-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.report-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.report-item a {
+  text-decoration: none;
+}
+
+.report-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.report-item .file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.report-item .file-icon i {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.report-info {
+  padding-top: 0.75rem;
+}
+
+.report-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.report-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.report-type {
+  color: var(--text-light);
+}
+
+.report-date {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+/* --- Status Messages --- */
+#status-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+
+/*
+========================================
+    RESPONSIVE STYLES (MEDIA QUERIES)
+========================================
+*/
+
+/* --- For Tablets --- */
+@media (max-width: 768px) {
+  .dashboard__nav .nav__container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  main .section__container {
+    padding: 1.5rem;
+  }
+
+  .dashboard__form__container,
+  .reports__container {
+    padding: 1.5rem;
+  }
+
+  h1, .section__header {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- For Mobile Phones --- */
+@media (max-width: 480px) {
+  main .section__container {
+    padding: 1rem;
+  }
+
+  .dashboard__form__container,
+  .reports__container {
+    padding: 1rem;
+  }
+  
+  .user__profile {
+    font-size: 1.2rem;
+  }
+
+  h1, .section__header {
+    font-size: 1.5rem;
+  }
+
+  #reports-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

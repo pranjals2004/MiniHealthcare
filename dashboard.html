@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Submit Report</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page">
+
+    <nav class="dashboard__nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">Health<span>Plus</span></a>
+            <div class="user__profile">
+                Welcome, <span id="user-name">[User Name]</span>
+                <a href="#" id="logoutBtn" class="logout__btn"><u>Logout</u></a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="section__container">
+            <div class="dashboard__form__container">
+                <h1 class="section__header">Patient Report Submission</h1>
+                <p>Fill out the form below to upload a new report or file.</p>
+                
+                <form id="report-form">
+                    <div class="form-group">
+                        <label for="report-type">Type of Report</label>
+                        <select id="report-type" name="reportType" required>
+                            <option value="" disabled selected>Select a report type...</option>
+                            <option value="Blood Test (CBC)">Blood Test (CBC)</option>
+                            <option value="Metabolic Panel">Metabolic Panel (Chemistry)</option>
+                            <option value="Lipid Panel">Lipid Panel (Cholesterol)</option>
+                            <option value="Urinalysis">Urinalysis</option>
+                            <option value="X-Ray">X-Ray</option>
+                            <option value="CT Scan">CT Scan</option>
+                            <option value="MRI">MRI</option>
+                            <option value="Ultrasound">Ultrasound</option>
+                            <option value="ECG/EKG">ECG / EKG (Electrocardiogram)</option>
+                            <option value="Echocardiogram">Echocardiogram</option>
+                            <option value="Biopsy Report">Biopsy Report</option>
+                            <option value="Discharge Summary">Discharge Summary</option>
+                            <option value="Prescription">Prescription</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div id="blood-test-fields" class="specific-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="haemoglobin">Haemoglobin (g/dL)</label>
+                            <input type="number" step="0.1" id="haemoglobin" name="haemoglobin" placeholder="e.g., 14.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="wbc">WBC Count (cells/mcL)</label>
+                            <input type="number" id="wbc" name="wbc" placeholder="e.g., 7500">
+                        </div>
+                        <div class="form-group">
+                            <label for="platelets">Platelet Count (per mcL)</label>
+                            <input type="number" id="platelets" name="platelets" placeholder="e.g., 250000">
+                        </div>
+                    </div>
+
+                    <div id="imaging-fields" class="specific-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="body-part">Body Part Imaged</label>
+                            <input type="text" id="body-part" name="bodyPart" placeholder="e.g., Left Knee, Brain, Abdomen">
+                        </div>
+                    </div>
+
+                    <div id="prescription-fields" class="specific-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="doctor-name">Prescribing Doctor's Name</label>
+                            <input type="text" id="doctor-name" name="doctorName" placeholder="e.g., Dr. Jane Smith">
+                        </div>
+                    </div>
+
+                    <div id="other-report-group" class="specific-fields" style="display: none;">
+                        <label for="other-report-type">Please Specify</label>
+                        <input type="text" id="other-report-type" name="otherReportType" placeholder="Specify the type of report">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="report-file">Upload Report File (PDF, DOCX, JPG)</label>
+                        <input type="file" id="report-file" name="reportFile" accept=".pdf,.docx,.jpg,.jpeg,.png" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Enter any relevant comments..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn form__btn">Submit Report</button>
+                </form>
+                
+                <div id="status-message"></div>
+            </div>
+
+            <div class="reports__container">
+                <h2 class="section__header">Your Uploaded Reports</h2>
+                <div id="reports-list">
+                    <p>You have not uploaded any reports yet.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html>
